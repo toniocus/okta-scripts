@@ -1,7 +1,7 @@
 #export KUBECONFIG=$HOME/.kube/okta-config
 #unset AWS_PROFILE
 
-source /u/ta/bin/okta-cli.sh
+source $TA_HOME/bin/okta-cli.sh
 
 ENVIROM=sit01
 

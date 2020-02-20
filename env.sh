@@ -3,14 +3,13 @@ then
 
   echo "Setting Telecom Arg environment....."
 
-  TA_HOME=/u/ta
-  PATH=$TA_HOME/bin:$PATH
+  PATH=$TA_HOME/bin:$TA_HOME/maven/bin:$PATH
 
   PS1="(ta)$PS1"
 
   source <(kubectl completion bash | sed 's/kubectl/kaws/g')
   source <(kubectl completion bash)
-  source /u/ta/bin/okta-cli.sh
+  source $TA_HOME/bin/okta-cli.sh
 
 
 #  export AWS_PROFILE=thor

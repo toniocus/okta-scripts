@@ -5,7 +5,7 @@
 
 PROD=/tmp/prod-integ.$$
 NS=/tmp/ns-integ.$$
-ENVDIR=/u/ta/environ/nonprod/Env/
+ENVDIR=$TA_HOME/environ/nonprod/Env/
 PROPPATH=/config/secrets/ta-integration.properties
 
 fpath() {
@@ -31,8 +31,8 @@ awk -F= '{ print $1 }' $TOCHECK | sort > $NS
 
 
 echo "----------------------------------------------"
-echo "Without space, lines in $2(PROD) not in $1"
-echo "Indented, lines not in $2(PROD)"
+echo "Without space, lines in *$1* not in *$2*"
+echo "Indented lines, lines not present in *$2*"
 echo "----------------------------------------------"
 
 comm -3 $PROD $NS

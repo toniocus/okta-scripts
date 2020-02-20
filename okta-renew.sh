@@ -13,6 +13,6 @@ fi
 
 echo "Renewing for profile $profileName...."
 
-source /u/ta/bin/okta-cli.sh
+source $TA_HOME/bin/okta-cli.sh
 okta-aws $profileName sts get-caller-identity
 
