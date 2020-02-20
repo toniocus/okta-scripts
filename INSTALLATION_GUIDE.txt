@@ -41,7 +41,7 @@ Instalar maven
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Instalar docker
+Instalar docker/kubectl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -ONLY FOR MACOS
@@ -50,10 +50,15 @@ Instalar docker
 
     -Bajar Docker
     https://www.techrepublic.com/article/the-easiest-way-to-nstall-docker-on-macos/
+    Instalar y luego abrir para que la instalacion este completa
     Docker instala kubectl
+
+-ONLY FOR UBUNTU
+   Instalar con snap version 14 (rechequear esta version)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instalar AWS-CLI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -ONLY FOR MACOS
 
@@ -61,9 +66,15 @@ Instalar AWS-CLI
     unzip awscli-bundle.zip
     sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
--Instalar okta aws cli
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instalar OKTA-CLI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PREFIX=~/.okta bash <(curl -fsSL https://raw.githubusercontent.com/oktadeveloper/okta-aws-cli-assume-role/master/bin/install.sh) -i
+
+Instalar aws-iam-authenticator  (en MACOS usando brew) 
+
+Poner el file okta-config provisto por vlocity HOME/.kube (el nombre debe se okta-config)
 
 Puede haber un bug de instalación en okta aws cli -> faltaba la librería de okta
 En ese caso, copiar de alguien que ya la tenga
