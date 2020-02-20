@@ -14,5 +14,6 @@ fi
 echo "Renewing for profile $profileName...."
 
 source $TA_HOME/bin/okta-cli.sh
+source jdk11+
 okta-aws $profileName sts get-caller-identity
 

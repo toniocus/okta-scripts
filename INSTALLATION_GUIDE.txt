@@ -4,6 +4,13 @@ Crear un directorio home para telecom, Ej:  HOME/telecomfan o HOME/fan, etc
 Crear la variable de environment TA_HOME que apunte a este directorio
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+MACOS instalar homebrew
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Bajar homebrew (chequear primero Ruby version) ejecutando el comando:
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instalar JDKs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -21,7 +28,6 @@ Crear dos scripts que esten el path que se llama: jdk8 y jdk11+
 #!/bin/bash
 export JAVA_HOME=path/to/java-versionXXX/home
 PATH=$JAVA_HOME/bin:$PATH
-
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instalar maven
