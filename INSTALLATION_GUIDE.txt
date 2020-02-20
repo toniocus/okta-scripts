@@ -1,0 +1,63 @@
+
+
+Crear un directorio home para telecom, Ej:  HOME/telecomfan o HOME/fan, etc
+Crear la variable de environment TA_HOME que apunte a este directorio
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instalar JDKs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Se debe instalara:  jdk1.8  y jdk11 o mayor
+
+MAC-OS
+
+- Installar homebrew
+- Instalar jdk8 y jdk11 o mayor (brew search jdk; Ej.: brew install openjdk@12)
+- Crear el script j8 y el script j11+ (en j11 poner la ultima version, no importa cual sea) en: HOME/bin/j8 y HOME/bin/j11
+
+Crear dos scripts que esten el path que se llama: jdk8 y jdk11+
+   Estos scripts deben hacer basicamente lo siguiente
+
+#!/bin/bash
+export JAVA_HOME=path/to/java-versionXXX/home
+PATH=$JAVA_HOME/bin:$PATH
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instalar maven
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Instalar maven 3.5
+  MACOS brew install maven@3.5
+  UBUNTU ?????
+  SI maven no esta en el default PATH hay que 
+      linkear el HOME_MAVEN $TA_HOME/maven -> ln -s MAVEN_HOME $TA_HOME/maven
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instalar docker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-ONLY FOR MACOS
+    Bajar homebrew (chequear primero Ruby version) ejecutando el comando:
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    -Bajar Docker
+    https://www.techrepublic.com/article/the-easiest-way-to-nstall-docker-on-macos/
+    Docker instala kubectl
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instalar AWS-CLI
+
+-ONLY FOR MACOS
+
+    curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+    unzip awscli-bundle.zip
+    sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+-Instalar okta aws cli
+
+PREFIX=~/.okta bash <(curl -fsSL https://raw.githubusercontent.com/oktadeveloper/okta-aws-cli-assume-role/master/bin/install.sh) -i
+
+Puede haber un bug de instalación en okta aws cli -> faltaba la librería de okta
+En ese caso, copiar de alguien que ya la tenga
