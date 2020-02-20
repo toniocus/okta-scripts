@@ -4,6 +4,7 @@ then
   echo "Setting Telecom Arg environment....."
 
   PATH=$TA_HOME/bin:$TA_HOME/maven/bin:$PATH
+  source jdk8
 
   PS1="(ta)$PS1"
 
