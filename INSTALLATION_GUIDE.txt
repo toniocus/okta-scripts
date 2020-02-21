@@ -17,16 +17,15 @@ Instalar JDKs
 Se debe instalara:  jdk1.8  y jdk11 o mayor
 
 MAC-OS
+    brew install openjdk@12, para buscar brew search openjdk
 
-- Installar homebrew
-- Instalar jdk8 y jdk11 o mayor (brew search jdk; Ej.: brew install openjdk@12)
-- Crear el script j8 y el script j11+ (en j11 poner la ultima version, no importa cual sea) en: HOME/bin/j8 y HOME/bin/j11
+- Encontrar los home directories de las intalaciones
 
-Crear dos scripts que esten el path que se llama: jdk8 y jdk11+
-   Estos scripts deben hacer basicamente lo siguiente
+- Crear el script jdk8 y el script jdk11+ (en jdk11 poner la ultima version, no importa cual sea) 
+   en: HOME/bin/jdk8 y HOME/bin/jdk11+
 
 #!/bin/bash
-export JAVA_HOME=path/to/java-versionXXX/home
+export JAVA_HOME=path/to/java-versionXXX-home
 PATH=$JAVA_HOME/bin:$PATH
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,8 +34,8 @@ Instalar maven
 
 - Instalar maven 3.5
   MACOS brew install maven@3.5
-  UBUNTU ?????
-  SI maven no esta en el default PATH hay que 
+  UBUNTU del repositorio o de apache
+  Si el comand mvn  no esta en el default PATH hay que 
       linkear el HOME_MAVEN $TA_HOME/maven -> ln -s MAVEN_HOME $TA_HOME/maven
 
 
@@ -53,8 +52,14 @@ Instalar docker/kubectl
     Instalar y luego abrir para que la instalacion este completa
     Docker instala kubectl
 
+    Chequear $HOME/.docker/config.json
+       - En principio se debe probar borrando el field credsStore
+       - Otra posibilidad es cambiar el valor de credsStore (que posiblemente este en desktop)
+         a oxskeychain.
+
 -ONLY FOR UBUNTU
-   Instalar con snap version 14 (rechequear esta version)
+   - kubectl instalar con snap version 14 (rechequear esta version)
+   - docker  instalar del repositorio normal docker.io creo es el paquete
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instalar AWS-CLI
@@ -66,13 +71,16 @@ Instalar AWS-CLI
     unzip awscli-bundle.zip
     sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
+-ONLY FOR UBUNTU
+    Instalar aws-cli con snap ultima version nomas
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instalar OKTA-CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 PREFIX=~/.okta bash <(curl -fsSL https://raw.githubusercontent.com/oktadeveloper/okta-aws-cli-assume-role/master/bin/install.sh) -i
 
-Instalar aws-iam-authenticator  (en MACOS usando brew) 
+Instalar aws-iam-authenticator  (en MACOS usando brew, en linux buscarlo en amazon y hacer download) 
 
 Poner el file okta-config provisto por vlocity HOME/.kube (el nombre debe se okta-config)
 
