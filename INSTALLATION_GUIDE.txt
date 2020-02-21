@@ -64,6 +64,7 @@ Instalar docker/kubectl
 -ONLY FOR UBUNTU
    - kubectl instalar con snap version 14 (rechequear esta version)
    - docker  instalar del repositorio normal docker.io creo es el paquete
+       agregar el usuario al grupo docker: usemod -G docker nombre_de_usuario
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instalar AWS-CLI
