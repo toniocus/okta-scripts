@@ -1,7 +1,9 @@
 
 
 Crear un directorio home para telecom, Ej:  HOME/telecomfan o HOME/fan, etc
-Crear la variable de environment TA_HOME que apunte a este directorio
+
+En .bashrc 
+ - Crear la variable de environment TA_HOME que apunte a este directorio
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MACOS instalar homebrew
@@ -23,6 +25,8 @@ MAC-OS
 
 - Crear el script jdk8 y el script jdk11+ (en jdk11 poner la ultima version, no importa cual sea) 
    en: HOME/bin/jdk8 y HOME/bin/jdk11+
+
+- Garantizarse que en el PATH este HOME/bin, sino agregarlo en .bashrc
 
 #!/bin/bash
 export JAVA_HOME=path/to/java-versionXXX-home
@@ -80,7 +84,7 @@ Instalar OKTA-CLI
 
 PREFIX=~/.okta bash <(curl -fsSL https://raw.githubusercontent.com/oktadeveloper/okta-aws-cli-assume-role/master/bin/install.sh) -i
 
-Instalar aws-iam-authenticator  (en MACOS usando brew, en linux buscarlo en amazon y hacer download) 
+Instalar aws-iam-authenticator en TA_HOME/bin  (en MACOS usando brew, en linux buscarlo en amazon y hacer download) 
 
 Poner el file okta-config provisto por vlocity HOME/.kube (el nombre debe se okta-config)
 
