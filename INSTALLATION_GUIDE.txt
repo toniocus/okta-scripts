@@ -67,8 +67,12 @@ Instalar docker/kubectl
 
 -ONLY FOR UBUNTU
    - kubectl instalar con snap version 14 (rechequear esta version)
+
+        snap info kubectl  (Da las versiones disponibles)
+        sudo snap install --channel=1.14 --classic kubectl
+
    - docker  instalar del repositorio normal docker.io creo es el paquete
-       agregar el usuario al grupo docker: usermod -G docker nombre_de_usuario
+       agregar el usuario al grupo docker: sudo usermod -a -G docker nombre_de_usuario
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instalar AWS-CLI
@@ -83,15 +87,38 @@ Instalar AWS-CLI
 -ONLY FOR UBUNTU
     Instalar aws-cli con snap ultima version nomas
 
+    sudo snap install --classic aws-cli
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instalar OKTA-CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Estando en el HOME directory correr esta instruccion:
 
 PREFIX=~/.okta bash <(curl -fsSL https://raw.githubusercontent.com/oktadeveloper/okta-aws-cli-assume-role/master/bin/install.sh) -i
 
 Instalar aws-iam-authenticator en TA_HOME/bin  (en MACOS usando brew, en linux buscarlo en amazon y hacer download) 
 
+Configurar el .okta/config.properties con los datos de vlocity 
+
 Poner el file okta-config provisto por vlocity HOME/.kube (el nombre debe se okta-config)
 
 Puede haber un bug de instalación en okta aws cli -> faltaba la librería de okta
 En ese caso, copiar de alguien que ya la tenga
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kubetail
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Hacer un clone en HOME o cualquier otro directorio
+    git clone  https://github.com/johanhaleby/kubetail.git
+
+Recomendable switchear a la ultima version
+    git tag   # para ver versiones
+    git co 1.6.10  # para switchear a version 1.6.10
+
+Hacer symbolic link a TA_HOME/bin
+
+    ln -s  KUBETAIL_DIR/kubetail $TA_HOME/bin
+
+
