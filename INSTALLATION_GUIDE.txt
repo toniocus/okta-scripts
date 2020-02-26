@@ -5,6 +5,10 @@ Crear un directorio home para telecom, Ej:  HOME/telecomfan o HOME/fan, etc
 En .bashrc 
  - Crear la variable de environment TA_HOME que apunte a este directorio
 
+Estando en TA_HOME bajar los scripts de github en el subdirectorio bin
+
+git clone https://github.com/toniocus/okta-scripts.git bin
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MACOS instalar homebrew
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,7 +68,7 @@ Instalar docker/kubectl
 -ONLY FOR UBUNTU
    - kubectl instalar con snap version 14 (rechequear esta version)
    - docker  instalar del repositorio normal docker.io creo es el paquete
-       agregar el usuario al grupo docker: usemod -G docker nombre_de_usuario
+       agregar el usuario al grupo docker: usermod -G docker nombre_de_usuario
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Instalar AWS-CLI
