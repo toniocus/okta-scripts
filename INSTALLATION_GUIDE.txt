@@ -32,6 +32,10 @@ MAC-OS
 
 - Garantizarse que en el PATH este HOME/bin, sino agregarlo en .bashrc
 
+
+-------------------------------------
+Modelo de script para jdk8 y jdk11+
+-------------------------------------
 #!/bin/bash
 export JAVA_HOME=path/to/java-versionXXX-home
 PATH=$JAVA_HOME/bin:$PATH
