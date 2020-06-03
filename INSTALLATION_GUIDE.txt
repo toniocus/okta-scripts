@@ -5,6 +5,12 @@ Crear un directorio home para telecom, Ej:  HOME/telecomfan o HOME/fan, etc
 En .bashrc 
  - Crear la variable de environment TA_HOME que apunte a este directorio
 
+En .zprofile por ZSH 
+ - Crear la variable de environment TA_HOME que apunte a este directorio
+ - Agregar la linea autoload -Uz compinit
+ - Agregar la linea  compinit
+
+
 Estando en TA_HOME bajar los scripts de github en el subdirectorio bin
 
 git clone https://github.com/toniocus/okta-scripts.git bin
