@@ -8,8 +8,16 @@ then
 
   PS1="(ta)$PS1"
 
-  source <(kubectl completion bash | sed 's/kubectl/kaws/g')
-  source <(kubectl completion bash)
+  CURRSHELL=$(ps -o args= -p $$)
+  
+  # zsh returns not exactly zsh
+  if [[ $CURRSHELL =~ "zsh" ]]
+  then
+     CURRSHELL="zsh"
+  fi
+
+  source <(kubectl completion $CURRSHELL | sed 's/kubectl/kaws/g')
+  source <(kubectl completion $CURRSHELL)
   source $TA_HOME/bin/okta-cli.sh
 
 
