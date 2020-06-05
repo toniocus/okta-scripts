@@ -14,6 +14,12 @@ then
   if [[ $CURRSHELL =~ "zsh" ]]
   then
      CURRSHELL="zsh"
+  elif [[ $CURRSHELL =~ "bash" ]]
+  then
+     CURRSHELL="bash"
+  else
+     echo "Do not know how to handle shell: $CURRSHELL"
+     exit 1
   fi
 
   source <(kubectl completion $CURRSHELL | sed 's/kubectl/kaws/g')
