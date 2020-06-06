@@ -8,8 +8,26 @@ then
 
   PS1="(ta)$PS1"
 
-  source <(kubectl completion bash | sed 's/kubectl/kaws/g')
-  source <(kubectl completion bash)
+  CURRSHELL=$(ps -o args= -p $$)
+  
+  # zsh returns not exactly zsh
+  if [[ $CURRSHELL =~ "zsh" ]]
+  then
+     CURRSHELL="zsh"
+  elif [[ $CURRSHELL =~ "bash" ]]
+  then
+     CURRSHELL="bash"
+  else
+     echo "WARNING: Kubectl completion was not configured, because of unknown shell: $CURRSHELL"
+     CURRSHELL="none"
+  fi
+
+  if [ $CURRSHELL != "none" ]
+  then
+      source <(kubectl completion $CURRSHELL | sed 's/kubectl/kaws/g')
+      source <(kubectl completion $CURRSHELL)
+  fi
+
   source $TA_HOME/bin/okta-cli.sh
 
 

@@ -5,6 +5,12 @@ Crear un directorio home para telecom, Ej:  HOME/telecomfan o HOME/fan, etc
 En .bashrc 
  - Crear la variable de environment TA_HOME que apunte a este directorio
 
+En .zprofile por ZSH 
+ - Crear la variable de environment TA_HOME que apunte a este directorio
+ - Agregar la linea autoload -Uz compinit
+ - Agregar la linea  compinit
+
+
 Estando en TA_HOME bajar los scripts de github en el subdirectorio bin
 
 git clone https://github.com/toniocus/okta-scripts.git bin
@@ -23,7 +29,18 @@ Instalar JDKs
 Se debe instalara:  jdk1.8  y jdk11 o mayor
 
 MAC-OS
-    brew install openjdk@12, para buscar brew search openjdk
+
+    # Agregar repositorio adoptOpenJDK a brew
+    brew tap AdoptOpenJDK/openjdk
+
+    # install jdk8 y jdk11 (en este orden)
+    brew cask install adoptopenjdk8
+    brew cask install adoptopenjdk11 
+
+    brew search openjdk   # para ver las versiones disponibles
+
+    # para averiguar los java home
+    /usr/libexec/java_home -V
 
 - Encontrar los home directories de las intalaciones
 
