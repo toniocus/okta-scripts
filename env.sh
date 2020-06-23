@@ -18,12 +18,16 @@ then
   then
      CURRSHELL="bash"
   else
-     echo "Do not know how to handle shell: $CURRSHELL"
-     exit 1
+     echo "WARNING: Kubectl completion was not configured, because of unknown shell: $CURRSHELL"
+     CURRSHELL="none"
   fi
 
-  source <(kubectl completion $CURRSHELL | sed 's/kubectl/kaws/g')
-  source <(kubectl completion $CURRSHELL)
+  if [ $CURRSHELL != "none" ]
+  then
+      source <(kubectl completion $CURRSHELL | sed 's/kubectl/kaws/g')
+      source <(kubectl completion $CURRSHELL)
+  fi
+
   source $TA_HOME/bin/okta-cli.sh
 
 
