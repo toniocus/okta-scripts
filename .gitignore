@@ -4,4 +4,6 @@ deploy-module.sh.old
 docker-repos.9571
 docker-repositories
 kubetail
+aws
+aws_completer
 
