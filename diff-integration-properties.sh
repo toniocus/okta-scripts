@@ -32,7 +32,7 @@ awk -F= '{ print $1 }' $TOCHECK | sort > $NS
 
 echo "----------------------------------------------"
 echo "Without space, lines in *$1* not in *$2*"
-echo "Indented lines, lines not present in *$2*"
+echo "Indented lines, lines in *$2* not present in *$1*"
 echo "----------------------------------------------"
 
 comm -3 $PROD $NS
