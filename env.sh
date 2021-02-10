@@ -8,27 +8,33 @@ then
 
   PS1="(ta)$PS1"
 
-  CURRSHELL=$(ps -o args= -p $$)
-  
-  # zsh returns not exactly zsh
-  if [[ $CURRSHELL =~ "zsh" ]]
+  if type kubectl > /dev/null
   then
-     CURRSHELL="zsh"
-  elif [[ $CURRSHELL =~ "bash" ]]
-  then
-     CURRSHELL="bash"
-  else
-     echo "WARNING: Kubectl completion was not configured, because of unknown shell: $CURRSHELL"
-     CURRSHELL="none"
+      echo "Processing kubectl completion...."
+      CURRSHELL=$(ps -o args= -p $$)
+      
+      # zsh returns not exactly zsh
+      if [[ $CURRSHELL =~ "zsh" ]]
+      then
+         CURRSHELL="zsh"
+      elif [[ $CURRSHELL =~ "bash" ]]
+      then
+         CURRSHELL="bash"
+      else
+         echo "WARNING: Kubectl completion was not configured, because of unknown shell: $CURRSHELL"
+         CURRSHELL="none"
+      fi
+
+      if [ $CURRSHELL != "none" ]
+      then
+          source <(kubectl completion $CURRSHELL | sed 's/kubectl/kaws/g')
+          source <(kubectl completion $CURRSHELL)
+      fi
   fi
 
-  if [ $CURRSHELL != "none" ]
-  then
-      source <(kubectl completion $CURRSHELL | sed 's/kubectl/kaws/g')
-      source <(kubectl completion $CURRSHELL)
+  if [ -f $TA_HOME/bin/okta-cli.sh ]; then
+      source $TA_HOME/bin/okta-cli.sh
   fi
-
-  source $TA_HOME/bin/okta-cli.sh
 
 
 #  export AWS_PROFILE=thor
