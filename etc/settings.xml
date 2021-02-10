@@ -1,0 +1,16 @@
+<settings>
+
+    <profiles>
+        <profile>
+            <id>ta.local.development.profile</id>
+            <properties>
+                <ta.local.development>true</ta.local.development>
+            </properties>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>ta.local.development.profile</activeProfile>
+    </activeProfiles>
+
+</settings>
