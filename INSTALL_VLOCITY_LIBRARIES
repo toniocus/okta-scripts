@@ -1,0 +1,18 @@
+
+# para obtener los pom files de un jar
+# Deja el pom.xml en el current working directory.
+unzip -j <path-to-file>  'META-INF/maven/**/pom.xml'
+
+
+# para los jar
+# el pomFile se extrae de dentro del archivo como fue explicado antes
+mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file 
+     -Dfile=<path-to-file>
+     -DpomFile=<path-to-jar-pom>
+
+
+# para el pom
+mvn install:install-file \
+    -Dpackaging=pom \
+    -Dfile=<path-to-pom> \
+    -DpomFile=<path-to-pom>
